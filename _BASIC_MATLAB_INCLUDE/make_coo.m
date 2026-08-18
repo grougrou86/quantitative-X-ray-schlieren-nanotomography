@@ -1,0 +1,9 @@
+function [co] = make_coo(sz)
+co={};
+for k=1:length(sz)
+    co_crr=((1:sz(k))-floor(sz(k)/2)-1)./sz(k); 
+    shape=ones(1,length(sz));
+    shape(k)=length(co_crr);
+    co_crr=reshape(co_crr,shape);
+    co{k}=co_crr;
+end
